@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, SdpoSerial;
+  ComCtrls, ExtCtrls, SdpoSerial, SdpoJoystick;
 
 type
 
@@ -25,6 +25,7 @@ type
     Button7: TButton;
     Button8: TButton;
     Button9: TButton;
+    ckJoystick: TCheckBox;
     Edit1: TEdit;
     edPorta: TEdit;
     Image1: TImage;
@@ -40,6 +41,7 @@ type
     OpenDialog1: TOpenDialog;
     PageControl1: TPageControl;
     SaveDialog1: TSaveDialog;
+    SdpoJoystick1: TSdpoJoystick;
     SdpoSerial1: TSdpoSerial;
     Shape1: TShape;
     Shape2: TShape;
@@ -100,7 +102,7 @@ begin
 
   Posicao:= posicao -forca;
   if (posicao < 0) then posicao := 0;
-  SdpoSerial1.WriteData(chr(operador)+chr(posicao));
+  SdpoSerial1.WriteData(chr(operador+ord('0'))+chr(posicao+ord(0)));
   tbposicao.Position:= posicao;
   lstMov.Items.Add('MOVRig:'+inttostr(01+30));
 end;
@@ -117,7 +119,7 @@ end;
 
 procedure Tfrmmain.Button1Click(Sender: TObject);
 begin
-  SdpoSerial1.WriteData(#07+#01);
+  SdpoSerial1.WriteData('10'+#13);
 
 end;
 

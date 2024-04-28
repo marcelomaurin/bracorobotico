@@ -1,22 +1,22 @@
 object frmmain: Tfrmmain
-  Left = 492
+  Left = -1096
   Height = 375
-  Top = 284
+  Top = 11
   Width = 620
   Caption = 'Gravador de Movimento Braço Robotico'
   ClientHeight = 375
   ClientWidth = 620
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.2.0.0'
   object PageControl1: TPageControl
     Left = 0
     Height = 375
     Top = 0
     Width = 620
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Sobre'
@@ -4145,17 +4145,17 @@ object frmmain: Tfrmmain
         Top = 24
         Width = 75
         Caption = 'Testa'
-        OnClick = Button1Click
         TabOrder = 0
+        OnClick = Button1Click
       end
       object Edit1: TEdit
         Left = 120
         Height = 23
         Top = 24
         Width = 80
-        OnKeyPress = Edit1KeyPress
         TabOrder = 1
         Text = 'Edit1'
+        OnKeyPress = Edit1KeyPress
       end
       object Button2: TButton
         Left = 496
@@ -4163,8 +4163,8 @@ object frmmain: Tfrmmain
         Top = 303
         Width = 75
         Caption = '>'
-        OnClick = Button2Click
         TabOrder = 2
+        OnClick = Button2Click
       end
       object Button3: TButton
         Left = 32
@@ -4172,8 +4172,8 @@ object frmmain: Tfrmmain
         Top = 303
         Width = 75
         Caption = '<<'
-        OnClick = Button3Click
         TabOrder = 3
+        OnClick = Button3Click
       end
       object Button4: TButton
         Left = 155
@@ -4181,8 +4181,8 @@ object frmmain: Tfrmmain
         Top = 303
         Width = 75
         Caption = '<-'
-        OnClick = Button4Click
         TabOrder = 4
+        OnClick = Button4Click
       end
       object Button5: TButton
         Left = 392
@@ -4190,8 +4190,8 @@ object frmmain: Tfrmmain
         Top = 303
         Width = 75
         Caption = '->'
-        OnClick = Button5Click
         TabOrder = 5
+        OnClick = Button5Click
       end
       object Button6: TButton
         Left = 24
@@ -4199,8 +4199,8 @@ object frmmain: Tfrmmain
         Top = 136
         Width = 75
         Caption = 'Braço'
-        OnClick = Button6Click
         TabOrder = 6
+        OnClick = Button6Click
       end
       object Button7: TButton
         Left = 24
@@ -4208,8 +4208,8 @@ object frmmain: Tfrmmain
         Top = 184
         Width = 75
         Caption = 'Punho'
-        OnClick = Button7Click
         TabOrder = 7
+        OnClick = Button7Click
       end
       object Button8: TButton
         Left = 24
@@ -4217,8 +4217,8 @@ object frmmain: Tfrmmain
         Top = 88
         Width = 75
         Caption = 'Girar'
-        OnClick = Button8Click
         TabOrder = 8
+        OnClick = Button8Click
       end
       object Button9: TButton
         Left = 24
@@ -4226,8 +4226,8 @@ object frmmain: Tfrmmain
         Top = 232
         Width = 75
         Caption = 'Garra'
-        OnClick = Button9Click
         TabOrder = 9
+        OnClick = Button9Click
       end
       object tbforte: TTrackBar
         Left = 470
@@ -4285,8 +4285,8 @@ object frmmain: Tfrmmain
         Top = 125
         Width = 75
         Caption = 'Limpar'
-        OnClick = Button10Click
         TabOrder = 13
+        OnClick = Button10Click
       end
       object Button11: TButton
         Left = 368
@@ -4294,8 +4294,8 @@ object frmmain: Tfrmmain
         Top = 152
         Width = 75
         Caption = 'Salvar'
-        OnClick = Button11Click
         TabOrder = 14
+        OnClick = Button11Click
       end
       object Button12: TButton
         Left = 368
@@ -4303,8 +4303,8 @@ object frmmain: Tfrmmain
         Top = 178
         Width = 75
         Caption = 'Carregar'
-        OnClick = Button12Click
         TabOrder = 15
+        OnClick = Button12Click
       end
       object tbposicao: TTrackBar
         Left = 136
@@ -4336,6 +4336,14 @@ object frmmain: Tfrmmain
         TabOrder = 0
         Text = 'COM3'
       end
+      object ckJoystick: TCheckBox
+        Left = 37
+        Height = 19
+        Top = 91
+        Width = 59
+        Caption = 'Joystick'
+        TabOrder = 1
+      end
     end
   end
   object SaveDialog1: TSaveDialog
@@ -4357,5 +4365,12 @@ object frmmain: Tfrmmain
     Device = 'COM1'
     Left = 275
     Top = 57
+  end
+  object SdpoJoystick1: TSdpoJoystick
+    Active = False
+    DeviceLin = '/dev/input/js0'
+    DeviceWin = dwJoystickID1
+    Left = 391
+    Top = 244
   end
 end
