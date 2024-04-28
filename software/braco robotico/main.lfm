@@ -14,9 +14,9 @@ object frmmain: Tfrmmain
     Height = 375
     Top = 0
     Width = 620
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Sobre'
@@ -4198,7 +4198,7 @@ object frmmain: Tfrmmain
         Height = 25
         Top = 136
         Width = 75
-        Caption = 'Braço'
+        Caption = 'Segmento 1'
         TabOrder = 6
         OnClick = Button6Click
       end
@@ -4207,7 +4207,7 @@ object frmmain: Tfrmmain
         Height = 25
         Top = 184
         Width = 75
-        Caption = 'Punho'
+        Caption = 'Segmento 2'
         TabOrder = 7
         OnClick = Button7Click
       end
@@ -4225,7 +4225,7 @@ object frmmain: Tfrmmain
         Height = 25
         Top = 232
         Width = 75
-        Caption = 'Garra'
+        Caption = 'Punho'
         TabOrder = 9
         OnClick = Button9Click
       end

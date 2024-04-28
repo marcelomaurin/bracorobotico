@@ -168,22 +168,22 @@ end;
 
 procedure Tfrmmain.Button6Click(Sender: TObject);
 begin
-  setservo(6, 44);
+  setservo(2, 44);
 end;
 
 procedure Tfrmmain.Button7Click(Sender: TObject);
 begin
-  setservo(4, 215);
+  setservo(3, 215);
 end;
 
 procedure Tfrmmain.Button8Click(Sender: TObject);
 begin
-  setservo(5, 214);
+  setservo(1, 214);
 end;
 
 procedure Tfrmmain.Button9Click(Sender: TObject);
 begin
-  setservo(7, 60);
+  setservo(4, 60);
 end;
 
 procedure Tfrmmain.Edit1KeyPress(Sender: TObject; var Key: char);

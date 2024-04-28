@@ -102,7 +102,7 @@ begin
 
   Posicao:= posicao -forca;
   if (posicao < 0) then posicao := 0;
-  SdpoSerial1.WriteData(chr(operador+ord('0'))+chr(posicao+ord(0)));
+  SdpoSerial1.WriteData(chr(operador+ord('0'))+chr(posicao+ord(0))+#13);
   tbposicao.Position:= posicao;
   lstMov.Items.Add('MOVRig:'+inttostr(01+30));
 end;
@@ -111,7 +111,7 @@ procedure Tfrmmain.moveleft(forca : integer);
 begin
   Posicao:= trunc(posicao +forca);
   if (posicao > 255) then posicao := 255;
-  SdpoSerial1.WriteData(chr(operador)+chr(posicao));
+  SdpoSerial1.WriteData(chr(operador+ord('0'))+chr(posicao+ord('0'))+#13);
   tbposicao.Position:= posicao;
   lstMov.Items.Add('MOVLef:'+IntToStr(255));
 end;
@@ -178,7 +178,7 @@ end;
 
 procedure Tfrmmain.Button8Click(Sender: TObject);
 begin
-  setservo(5, 214);
+  setservo(1, 214);
 end;
 
 procedure Tfrmmain.Button9Click(Sender: TObject);
